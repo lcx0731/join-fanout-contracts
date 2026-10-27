@@ -1,0 +1,30 @@
+[
+  {
+    "customer_id": "A",
+    "weight": 1
+  },
+  {
+    "customer_id": "A",
+    "weight": 2
+  },
+  {
+    "customer_id": "B",
+    "weight": 3
+  },
+  {
+    "customer_id": "D",
+    "weight": 4
+  },
+  {
+    "customer_id": null,
+    "weight": 5
+  },
+  {
+    "customer_id": null,
+    "weight": 6
+  },
+  {
+    "customer_id": null,
+    "weight": 7
+  }
+]

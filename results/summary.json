@@ -1,0 +1,987 @@
+{
+  "data": "Deterministic synthetic records, not real customers, transactions, or identifiers.",
+  "small_inputs": {
+    "left": [
+      {
+        "customer_id": "A",
+        "units": 10
+      },
+      {
+        "customer_id": "A",
+        "units": 20
+      },
+      {
+        "customer_id": "B",
+        "units": 7
+      },
+      {
+        "customer_id": "C",
+        "units": 5
+      },
+      {
+        "customer_id": null,
+        "units": 3
+      },
+      {
+        "customer_id": null,
+        "units": 4
+      }
+    ],
+    "right": [
+      {
+        "customer_id": "A",
+        "weight": 1
+      },
+      {
+        "customer_id": "A",
+        "weight": 2
+      },
+      {
+        "customer_id": "B",
+        "weight": 3
+      },
+      {
+        "customer_id": "D",
+        "weight": 4
+      },
+      {
+        "customer_id": null,
+        "weight": 5
+      },
+      {
+        "customer_id": null,
+        "weight": 6
+      },
+      {
+        "customer_id": null,
+        "weight": 7
+      }
+    ]
+  },
+  "small_joins": [
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "inner",
+        "nulls": "sql",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 5,
+        "output_rows": 5,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 1,
+        "duplicate_right_matchable_keys": 1,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 5,
+          "output_sum": 67
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 5,
+          "output_sum": 9
+        },
+        "top_contributors": [
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 5,
+        "matched_output_rows": 5,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_output_value_count": 5,
+        "right_output_value_count": 5,
+        "left_output_sum": 67,
+        "right_output_sum": 9
+      }
+    },
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "left",
+        "nulls": "sql",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 5,
+        "output_rows": 8,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 1,
+        "duplicate_right_matchable_keys": 1,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 8,
+          "output_sum": 79
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 5,
+          "output_sum": 9
+        },
+        "top_contributors": [
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              null
+            ],
+            "left_rows": 2,
+            "right_rows": 3,
+            "matched_output_rows": 0,
+            "output_rows": 2,
+            "left_copy_factor": 1,
+            "right_copy_factor": 0
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "C"
+            ],
+            "left_rows": 1,
+            "right_rows": 0,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 0
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 8,
+        "matched_output_rows": 5,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_output_value_count": 8,
+        "right_output_value_count": 5,
+        "left_output_sum": 79,
+        "right_output_sum": 9
+      }
+    },
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "right",
+        "nulls": "sql",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 5,
+        "output_rows": 9,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 1,
+        "duplicate_right_matchable_keys": 1,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 5,
+          "output_sum": 67
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 9,
+          "output_sum": 31
+        },
+        "top_contributors": [
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              null
+            ],
+            "left_rows": 2,
+            "right_rows": 3,
+            "matched_output_rows": 0,
+            "output_rows": 3,
+            "left_copy_factor": 0,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "D"
+            ],
+            "left_rows": 0,
+            "right_rows": 1,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 0,
+            "right_copy_factor": 1
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 9,
+        "matched_output_rows": 5,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_output_value_count": 5,
+        "right_output_value_count": 9,
+        "left_output_sum": 67,
+        "right_output_sum": 31
+      }
+    },
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "full",
+        "nulls": "sql",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 5,
+        "output_rows": 12,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 1,
+        "duplicate_right_matchable_keys": 1,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 8,
+          "output_sum": 79
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 9,
+          "output_sum": 31
+        },
+        "top_contributors": [
+          {
+            "key": [
+              null
+            ],
+            "left_rows": 2,
+            "right_rows": 3,
+            "matched_output_rows": 0,
+            "output_rows": 5,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "C"
+            ],
+            "left_rows": 1,
+            "right_rows": 0,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 0
+          },
+          {
+            "key": [
+              "D"
+            ],
+            "left_rows": 0,
+            "right_rows": 1,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 0,
+            "right_copy_factor": 1
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 12,
+        "matched_output_rows": 5,
+        "unmatched_left_rows": 3,
+        "unmatched_right_rows": 4,
+        "left_output_value_count": 8,
+        "right_output_value_count": 9,
+        "left_output_sum": 79,
+        "right_output_sum": 31
+      }
+    },
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "inner",
+        "nulls": "null_safe",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 11,
+        "output_rows": 11,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 2,
+        "duplicate_right_matchable_keys": 2,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 11,
+          "output_sum": 88
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 11,
+          "output_sum": 45
+        },
+        "top_contributors": [
+          {
+            "key": [
+              null
+            ],
+            "left_rows": 2,
+            "right_rows": 3,
+            "matched_output_rows": 6,
+            "output_rows": 6,
+            "left_copy_factor": 3,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 11,
+        "matched_output_rows": 11,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_output_value_count": 11,
+        "right_output_value_count": 11,
+        "left_output_sum": 88,
+        "right_output_sum": 45
+      }
+    },
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "left",
+        "nulls": "null_safe",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 11,
+        "output_rows": 12,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 2,
+        "duplicate_right_matchable_keys": 2,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 12,
+          "output_sum": 93
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 11,
+          "output_sum": 45
+        },
+        "top_contributors": [
+          {
+            "key": [
+              null
+            ],
+            "left_rows": 2,
+            "right_rows": 3,
+            "matched_output_rows": 6,
+            "output_rows": 6,
+            "left_copy_factor": 3,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "C"
+            ],
+            "left_rows": 1,
+            "right_rows": 0,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 0
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 12,
+        "matched_output_rows": 11,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_output_value_count": 12,
+        "right_output_value_count": 11,
+        "left_output_sum": 93,
+        "right_output_sum": 45
+      }
+    },
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "right",
+        "nulls": "null_safe",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 11,
+        "output_rows": 12,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 2,
+        "duplicate_right_matchable_keys": 2,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 11,
+          "output_sum": 88
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 12,
+          "output_sum": 49
+        },
+        "top_contributors": [
+          {
+            "key": [
+              null
+            ],
+            "left_rows": 2,
+            "right_rows": 3,
+            "matched_output_rows": 6,
+            "output_rows": 6,
+            "left_copy_factor": 3,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "D"
+            ],
+            "left_rows": 0,
+            "right_rows": 1,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 0,
+            "right_copy_factor": 1
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 12,
+        "matched_output_rows": 11,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_output_value_count": 11,
+        "right_output_value_count": 12,
+        "left_output_sum": 88,
+        "right_output_sum": 49
+      }
+    },
+    {
+      "audit": {
+        "keys": [
+          "customer_id"
+        ],
+        "how": "full",
+        "nulls": "null_safe",
+        "relationship": "many-to-many",
+        "key_types": [
+          "str"
+        ],
+        "left_rows": 6,
+        "right_rows": 7,
+        "left_distinct_keys": 4,
+        "right_distinct_keys": 4,
+        "matched_output_rows": 11,
+        "output_rows": 13,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_null_key_rows": 2,
+        "right_null_key_rows": 3,
+        "duplicate_left_matchable_keys": 2,
+        "duplicate_right_matchable_keys": 2,
+        "left_measure": {
+          "field": "units",
+          "input_value_count": 6,
+          "input_sum": 49,
+          "output_value_count": 12,
+          "output_sum": 93
+        },
+        "right_measure": {
+          "field": "weight",
+          "input_value_count": 7,
+          "input_sum": 28,
+          "output_value_count": 12,
+          "output_sum": 49
+        },
+        "top_contributors": [
+          {
+            "key": [
+              null
+            ],
+            "left_rows": 2,
+            "right_rows": 3,
+            "matched_output_rows": 6,
+            "output_rows": 6,
+            "left_copy_factor": 3,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "A"
+            ],
+            "left_rows": 2,
+            "right_rows": 2,
+            "matched_output_rows": 4,
+            "output_rows": 4,
+            "left_copy_factor": 2,
+            "right_copy_factor": 2
+          },
+          {
+            "key": [
+              "B"
+            ],
+            "left_rows": 1,
+            "right_rows": 1,
+            "matched_output_rows": 1,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 1
+          },
+          {
+            "key": [
+              "C"
+            ],
+            "left_rows": 1,
+            "right_rows": 0,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 1,
+            "right_copy_factor": 0
+          },
+          {
+            "key": [
+              "D"
+            ],
+            "left_rows": 0,
+            "right_rows": 1,
+            "matched_output_rows": 0,
+            "output_rows": 1,
+            "left_copy_factor": 0,
+            "right_copy_factor": 1
+          }
+        ],
+        "max_output_rows": null,
+        "violations": [],
+        "ok": true
+      },
+      "sqlite_reference": {
+        "output_rows": 13,
+        "matched_output_rows": 11,
+        "unmatched_left_rows": 1,
+        "unmatched_right_rows": 1,
+        "left_output_value_count": 12,
+        "right_output_value_count": 12,
+        "left_output_sum": 93,
+        "right_output_sum": 49
+      }
+    }
+  ],
+  "guarded_small_join": {
+    "keys": [
+      "customer_id"
+    ],
+    "how": "left",
+    "nulls": "sql",
+    "relationship": "many-to-one",
+    "key_types": [
+      "str"
+    ],
+    "left_rows": 6,
+    "right_rows": 7,
+    "left_distinct_keys": 4,
+    "right_distinct_keys": 4,
+    "matched_output_rows": 5,
+    "output_rows": 8,
+    "unmatched_left_rows": 3,
+    "unmatched_right_rows": 4,
+    "left_null_key_rows": 2,
+    "right_null_key_rows": 3,
+    "duplicate_left_matchable_keys": 1,
+    "duplicate_right_matchable_keys": 1,
+    "left_measure": {
+      "field": "units",
+      "input_value_count": 6,
+      "input_sum": 49,
+      "output_value_count": 8,
+      "output_sum": 79
+    },
+    "right_measure": {
+      "field": "weight",
+      "input_value_count": 7,
+      "input_sum": 28,
+      "output_value_count": 5,
+      "output_sum": 9
+    },
+    "top_contributors": [
+      {
+        "key": [
+          "A"
+        ],
+        "left_rows": 2,
+        "right_rows": 2,
+        "matched_output_rows": 4,
+        "output_rows": 4,
+        "left_copy_factor": 2,
+        "right_copy_factor": 2
+      },
+      {
+        "key": [
+          null
+        ],
+        "left_rows": 2,
+        "right_rows": 3,
+        "matched_output_rows": 0,
+        "output_rows": 2,
+        "left_copy_factor": 1,
+        "right_copy_factor": 0
+      },
+      {
+        "key": [
+          "B"
+        ],
+        "left_rows": 1,
+        "right_rows": 1,
+        "matched_output_rows": 1,
+        "output_rows": 1,
+        "left_copy_factor": 1,
+        "right_copy_factor": 1
+      },
+      {
+        "key": [
+          "C"
+        ],
+        "left_rows": 1,
+        "right_rows": 0,
+        "matched_output_rows": 0,
+        "output_rows": 1,
+        "left_copy_factor": 1,
+        "right_copy_factor": 0
+      }
+    ],
+    "max_output_rows": 7,
+    "violations": [
+      "right side has 1 duplicated matchable keys",
+      "output row count 8 exceeds budget 7",
+      "3 left rows have no match"
+    ],
+    "ok": false
+  },
+  "hot_key_example": {
+    "audit": {
+      "keys": [
+        "key"
+      ],
+      "how": "inner",
+      "nulls": "sql",
+      "relationship": "many-to-many",
+      "key_types": [
+        "str"
+      ],
+      "left_rows": 20000,
+      "right_rows": 15000,
+      "left_distinct_keys": 1,
+      "right_distinct_keys": 1,
+      "matched_output_rows": 300000000,
+      "output_rows": 300000000,
+      "unmatched_left_rows": 0,
+      "unmatched_right_rows": 0,
+      "left_null_key_rows": 0,
+      "right_null_key_rows": 0,
+      "duplicate_left_matchable_keys": 1,
+      "duplicate_right_matchable_keys": 1,
+      "left_measure": {
+        "field": "units",
+        "input_value_count": 20000,
+        "input_sum": 20000,
+        "output_value_count": 300000000,
+        "output_sum": 300000000
+      },
+      "right_measure": {
+        "field": "units",
+        "input_value_count": 15000,
+        "input_sum": 30000,
+        "output_value_count": 300000000,
+        "output_sum": 600000000
+      },
+      "top_contributors": [
+        {
+          "key": [
+            "hot"
+          ],
+          "left_rows": 20000,
+          "right_rows": 15000,
+          "matched_output_rows": 300000000,
+          "output_rows": 300000000,
+          "left_copy_factor": 15000,
+          "right_copy_factor": 20000
+        }
+      ],
+      "max_output_rows": 1000000,
+      "violations": [
+        "output row count 300000000 exceeds budget 1000000"
+      ],
+      "ok": false
+    },
+    "input_rows_consumed": 35000,
+    "frequency_group_entries": 2,
+    "materialized_join_rows": 0,
+    "scope": "Counts, not measured runtime or memory benchmarks; SQLite is not run on this case."
+  }
+}

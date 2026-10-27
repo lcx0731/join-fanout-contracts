@@ -1,0 +1,26 @@
+[
+  {
+    "customer_id": "A",
+    "units": 10
+  },
+  {
+    "customer_id": "A",
+    "units": 20
+  },
+  {
+    "customer_id": "B",
+    "units": 7
+  },
+  {
+    "customer_id": "C",
+    "units": 5
+  },
+  {
+    "customer_id": null,
+    "units": 3
+  },
+  {
+    "customer_id": null,
+    "units": 4
+  }
+]

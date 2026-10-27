@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "join-fanout-contracts"
+version = "0.1.0"
+description = "Exact equijoin cardinality and measure-fanout contracts without materializing joined rows"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9", "matplotlib>=3.9,<4"]
+
+[project.scripts]
+join-audit = "join_fanout.cli:main"
+join-audit-demo = "join_fanout.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
